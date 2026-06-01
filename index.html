@@ -33,6 +33,11 @@
       line-height: 1.5;
     }
 
+    img {
+      image-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+
     .site {
       max-width: 960px;
       margin: 0 auto;
@@ -498,11 +503,38 @@
 
     .ms-footer {
       background: #0078D4;
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.8);
       text-align: center;
       padding: 14px;
       font-size: 11px;
       letter-spacing: 0.5px;
+    }
+
+    .ms-footer-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .ms-footer-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1.5px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+
+    .ms-footer-link:hover::after {
+      width: 100%;
+    }
+
+    .ms-footer-link:hover {
+      opacity: 0.9;
     }
 
     /* ===================== PRINT STYLES ===================== */
@@ -546,11 +578,9 @@
         page-break-inside: avoid;
       }
 
-      .ms-persona-coin {
-        background: #0078D4 !important;
+      .ms-persona-section img {
         width: 52px !important;
         height: 52px !important;
-        font-size: 18px !important;
       }
 
       .ms-persona-details h1 {
@@ -687,47 +717,64 @@
     @media (max-width: 720px) {
       .ms-persona-section {
         flex-direction: column;
-        padding: 20px;
+        align-items: center;
+        text-align: center;
+        padding: 28px 20px 20px;
+        gap: 16px;
+      }
+
+      .ms-persona-section img {
+        width: 96px !important;
+        height: 96px !important;
+      }
+
+      .ms-persona-details h1 {
+        font-size: 22px;
+      }
+
+      .ms-role {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+
+      .ms-persona-meta {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .ms-meta-item {
+        font-size: 12px;
+      }
+
+      .ms-persona-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .ms-btn {
+        flex: 0 1 auto;
+        min-width: 110px;
+        justify-content: center;
       }
 
       .ms-pivot-bar {
-        padding: 0 16px;
+        padding: 0 12px;
         overflow-x: auto;
+      }
+
+      .ms-pivot-item {
+        padding: 10px 12px;
+        font-size: 12px;
       }
 
       .ms-main {
         grid-template-columns: 1fr;
         gap: 0;
         padding: 12px;
-      }
-    }
-
-    .link-animated {
-      position: relative;
-      text-decoration: underline;
-      display: inline-block;
-      color: white;
-      padding: 0 1px;
-      transition: color ease 0.3s;
-
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 5%;
-        left: 0;
-        bottom: 0;
-        background-color: black;
-        transition: all ease 0.3s;
-      }
-
-      &:hover {
-        color: white;
-
-        &::after {
-          height: 100%;
-        }
       }
     }
   </style>
@@ -744,15 +791,17 @@
     </header>
 
     <section class="ms-persona-section" aria-label="Profile">
-      <div class="ms-persona-coin" aria-hidden="true">CL</div>
+      <img src="https://www.charlesllamas.pro/images/profile.jpg" alt="Charles Llamas"
+        style="width:110px;height:110px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:3px solid #0078D4;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges;transform:translateZ(0);backface-visibility:hidden;">
       <div style="flex:1">
         <h1>Charles Llamas</h1>
         <p class="ms-role">Technical Lead · Power Platform Senior Developer</p>
         <div class="ms-persona-meta">
           <span class="ms-meta-item"><i class="ti ti-map-pin" aria-hidden="true"></i> Mexico · Remote</span>
-          <span class="ms-meta-item"><i class="ti ti-briefcase" aria-hidden="true"></i> 14+ years experience</span>
-          <span class="ms-meta-item"><i class="ti ti-school" aria-hidden="true"></i> Ing. Sistemas
-            Computacionales</span>
+          <span class="ms-meta-item"><i class="ti ti-briefcase" aria-hidden="true"></i> <span id="exp-years"></span>
+            years experience</span>
+          <span class="ms-meta-item"><i class="ti ti-school" aria-hidden="true"></i> B.S. Computer Systems
+            Engineering</span>
         </div>
         <div class="ms-persona-actions">
           <a class="ms-btn ms-btn-primary" href="https://www.linkedin.com/in/charlesllamas" target="_blank"
@@ -1091,13 +1140,17 @@
 
     </div>
 
-    <footer class="ms-footer">© 2026 Charles Llamas · <a href="https://www.charlesllamas.pro/about" target="_blank"
-        class="link-animated">charlesllamas.pro</a> </footer>
+    <footer class="ms-footer">© <span id="footer-year"></span> Charles Llamas · <a
+        href="https://www.charlesllamas.pro/about" target="_blank" rel="noreferrer"
+        class="ms-footer-link">charlesllamas.pro</a></footer>
 
   </div>
 
   <script>
-    // Active pivot tab on scroll
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    var startYear = 2012;
+    var years = new Date().getFullYear() - startYear;
+    document.getElementById('exp-years').textContent = years + '+';
     const pivotItems = document.querySelectorAll('.ms-pivot-item');
     const anchors = [
       { id: 'sec-about', el: document.getElementById('sec-about') },
