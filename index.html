@@ -1,12 +1,1129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Llamas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charles Llamas | Technical Lead · Power Platform Developer</title>
+  <meta name="description" content="Power Platform Senior Developer with 14+ years delivering enterprise solutions.">
+  <meta property="og:title" content="Charles Llamas | Technical Lead · Power Platform Developer">
+  <meta property="og:url" content="https://charlesllamas.github.io">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #F3F2F1;
+      color: #201F1E;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .site {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .ms-header {
+      background: #0078D4;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      gap: 12px;
+    }
+
+    .ms-header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .ms-persona-section {
+      background: white;
+      border-bottom: 1px solid #E1DFDD;
+      padding: 32px 32px 24px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .ms-persona-coin {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #0078D4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+      letter-spacing: -0.5px;
+    }
+
+    .ms-persona-details h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #201F1E;
+      margin-bottom: 4px;
+    }
+
+    .ms-role {
+      font-size: 14px;
+      color: #605E5C;
+      margin-bottom: 14px;
+    }
+
+    .ms-persona-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ms-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: #605E5C;
+    }
+
+    .ms-meta-item i {
+      font-size: 14px;
+      color: #0078D4;
+    }
+
+    .ms-persona-actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ms-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0 16px;
+      height: 32px;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 2px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: background 0.1s, border-color 0.1s;
+      font-family: inherit;
+      background: none;
+    }
+
+    .ms-btn-primary {
+      background: #0078D4;
+      color: white;
+      border-color: #0078D4;
+    }
+
+    .ms-btn-primary:hover {
+      background: #106EBE;
+      border-color: #106EBE;
+    }
+
+    .ms-btn-default {
+      background: white;
+      color: #201F1E;
+      border-color: #8A8886;
+    }
+
+    .ms-btn-default:hover {
+      background: #F3F2F1;
+    }
+
+    /* PIVOT — scroll-based */
+    .ms-pivot-bar {
+      background: white;
+      border-bottom: 1px solid #E1DFDD;
+      display: flex;
+      padding: 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .ms-pivot-item {
+      padding: 12px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #605E5C;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .ms-pivot-item:hover {
+      color: #201F1E;
+    }
+
+    .ms-pivot-item.active {
+      color: #0078D4;
+      border-bottom-color: #0078D4;
+    }
+
+    /* scroll offset for sticky nav */
+    .section-anchor {
+      display: block;
+      height: 56px;
+      margin-top: -56px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .ms-main {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 16px;
+      padding: 16px;
+      background: #F3F2F1;
+    }
+
+    .ms-card {
+      background: white;
+      border: 1px solid #E1DFDD;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .ms-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .ms-card-header {
+      padding: 16px 20px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #F3F2F1;
+    }
+
+    .ms-card-header h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #201F1E;
+    }
+
+    .ms-card-header i {
+      font-size: 16px;
+      color: #0078D4;
+    }
+
+    .ms-card-body {
+      padding: 16px 20px;
+    }
+
+    .ms-detail-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .ms-detail-list td {
+      padding: 7px 0;
+      border-bottom: 1px solid #F3F2F1;
+      font-size: 13px;
+      vertical-align: top;
+    }
+
+    .ms-detail-list td:first-child {
+      color: #605E5C;
+      width: 120px;
+    }
+
+    .ms-detail-list td:last-child {
+      color: #201F1E;
+    }
+
+    .ms-detail-list tr:last-child td {
+      border-bottom: none;
+    }
+
+    .ms-timeline {
+      list-style: none;
+    }
+
+    .ms-timeline-item {
+      display: flex;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F3F2F1;
+    }
+
+    .ms-timeline-item:last-child {
+      border-bottom: none;
+    }
+
+    .ms-tl-dot-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 14px;
+      flex-shrink: 0;
+      padding-top: 5px;
+    }
+
+    .ms-tl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #0078D4;
+      flex-shrink: 0;
+    }
+
+    .ms-tl-line {
+      width: 1px;
+      background: #C8C6C4;
+      flex: 1;
+      margin-top: 5px;
+      min-height: 16px;
+    }
+
+    .ms-timeline-item:last-child .ms-tl-line {
+      display: none;
+    }
+
+    .ms-tl-period {
+      font-size: 11px;
+      color: #0078D4;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .ms-tl-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #201F1E;
+    }
+
+    .ms-tl-sub {
+      font-size: 12px;
+      color: #605E5C;
+      margin-top: 2px;
+    }
+
+    .ms-tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .ms-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 2px;
+      font-size: 12px;
+      font-weight: 400;
+      background: #EFF6FC;
+      color: #0078D4;
+      border: 1px solid #C7E0F4;
+    }
+
+    .ms-tag.strong {
+      background: #0078D4;
+      color: white;
+      border-color: #0078D4;
+      font-weight: 600;
+    }
+
+    .ms-skill-group-label {
+      font-size: 11px;
+      color: #605E5C;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 0 8px;
+    }
+
+    .ms-skill-section {
+      margin-bottom: 14px;
+    }
+
+    .ms-skill-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .ms-cert-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #F3F2F1;
+    }
+
+    .ms-cert-row:last-child {
+      border-bottom: none;
+    }
+
+    .ms-cert-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 2px;
+      background: #EFF6FC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ms-cert-icon i {
+      font-size: 16px;
+      color: #0078D4;
+    }
+
+    .ms-cert-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: #201F1E;
+      line-height: 1.4;
+    }
+
+    .ms-cert-date {
+      font-size: 11px;
+      color: #605E5C;
+      margin-top: 2px;
+    }
+
+    .ms-lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #F3F2F1;
+    }
+
+    .ms-lang-row:last-child {
+      border-bottom: none;
+    }
+
+    .ms-lang-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #201F1E;
+    }
+
+    .ms-lang-badge {
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #EFF6FC;
+      color: #0078D4;
+      font-weight: 600;
+    }
+
+    .ms-cap {
+      padding: 10px 0;
+      border-bottom: 1px solid #F3F2F1;
+    }
+
+    .ms-cap:last-child {
+      border-bottom: none;
+    }
+
+    .ms-cap-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .ms-cap-header i {
+      font-size: 16px;
+      color: #0078D4;
+    }
+
+    .ms-cap-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #201F1E;
+    }
+
+    .ms-cap ul {
+      padding-left: 18px;
+    }
+
+    .ms-cap li {
+      font-size: 12px;
+      color: #605E5C;
+      line-height: 1.8;
+    }
+
+    .ms-hobby {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: #F3F2F1;
+      border: 1px solid #E1DFDD;
+      border-radius: 2px;
+      font-size: 12px;
+      color: #201F1E;
+      margin: 0 6px 6px 0;
+    }
+
+    .ms-hobby i {
+      font-size: 14px;
+      color: #0078D4;
+    }
+
+    .ms-footer {
+      background: #0078D4;
+      color: rgba(255, 255, 255, 0.55);
+      text-align: center;
+      padding: 14px;
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===================== PRINT STYLES ===================== */
+    @page {
+      margin: 12mm 14mm;
+      size: A4;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      html,
+      body {
+        background: white !important;
+        margin: 0;
+        padding: 0;
+        font-size: 11px;
+      }
+
+      .site {
+        max-width: 100% !important;
+      }
+
+      /* hide nav chrome */
+      .ms-header,
+      .ms-pivot-bar,
+      .ms-footer,
+      .ms-persona-actions {
+        display: none !important;
+      }
+
+      /* persona hero: flat, no blue bg */
+      .ms-persona-section {
+        background: white !important;
+        border: none !important;
+        border-bottom: 2px solid #0078D4 !important;
+        padding: 16px 0 12px !important;
+        page-break-inside: avoid;
+      }
+
+      .ms-persona-coin {
+        background: #0078D4 !important;
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 18px !important;
+      }
+
+      .ms-persona-details h1 {
+        font-size: 18px !important;
+      }
+
+      .ms-role {
+        font-size: 12px !important;
+        margin-bottom: 6px !important;
+      }
+
+      .ms-persona-meta {
+        gap: 12px !important;
+      }
+
+      .ms-meta-item {
+        font-size: 11px !important;
+      }
+
+      /* two-column grid — keep it, just tighten */
+      .ms-main {
+        display: grid !important;
+        grid-template-columns: 1fr 220px !important;
+        gap: 10px !important;
+        padding: 10px 0 !important;
+        background: white !important;
+      }
+
+      /* cards: no border, minimal padding, no break inside */
+      .ms-card {
+        border: none !important;
+        border-bottom: 1px solid #E1DFDD !important;
+        border-radius: 0 !important;
+        margin-bottom: 8px !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .ms-card-header {
+        padding: 8px 0 6px !important;
+        border-bottom: none !important;
+      }
+
+      .ms-card-header h2 {
+        font-size: 12px !important;
+      }
+
+      .ms-card-header i {
+        font-size: 13px !important;
+      }
+
+      .ms-card-body {
+        padding: 4px 0 10px !important;
+      }
+
+      /* timeline tighter */
+      .ms-timeline-item {
+        padding: 6px 0 !important;
+      }
+
+      .ms-tl-title {
+        font-size: 11px !important;
+      }
+
+      .ms-tl-sub {
+        font-size: 10px !important;
+      }
+
+      .ms-tl-period {
+        font-size: 10px !important;
+      }
+
+      /* tags */
+      .ms-tag {
+        font-size: 10px !important;
+        padding: 2px 7px !important;
+        border: 1px solid #C7E0F4 !important;
+      }
+
+      .ms-tag.strong {
+        background: #0078D4 !important;
+        color: white !important;
+      }
+
+      /* certs */
+      .ms-cert-row {
+        padding: 6px 0 !important;
+      }
+
+      .ms-cert-name {
+        font-size: 10px !important;
+      }
+
+      .ms-cert-date {
+        font-size: 9px !important;
+      }
+
+      .ms-cert-icon {
+        width: 24px !important;
+        height: 24px !important;
+      }
+
+      /* misc */
+      .ms-cap li {
+        font-size: 10px !important;
+        line-height: 1.6 !important;
+      }
+
+      .ms-lang-name {
+        font-size: 11px !important;
+      }
+
+      .ms-lang-badge {
+        font-size: 9px !important;
+      }
+
+      .ms-detail-list td {
+        font-size: 11px !important;
+        padding: 4px 0 !important;
+      }
+
+      /* don't print hobbies section */
+      .ms-card:has(i.ti-mood-smile) {
+        display: none !important;
+      }
+
+      /* section anchors invisible */
+      .section-anchor {
+        display: none !important;
+      }
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 720px) {
+      .ms-persona-section {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .ms-pivot-bar {
+        padding: 0 16px;
+        overflow-x: auto;
+      }
+
+      .ms-main {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 12px;
+      }
+    }
+
+    .link-animated {
+      position: relative;
+      text-decoration: underline;
+      display: inline-block;
+      color: white;
+      padding: 0 1px;
+      transition: color ease 0.3s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 5%;
+        left: 0;
+        bottom: 0;
+        background-color: black;
+        transition: all ease 0.3s;
+      }
+
+      &:hover {
+        color: white;
+
+        &::after {
+          height: 100%;
+        }
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Charles Llamas .io</h1>
+
+  <div class="site">
+
+    <header class="ms-header">
+      <a class="ms-header-logo" href="#">
+        Charles Llamas · Profile
+      </a>
+    </header>
+
+    <section class="ms-persona-section" aria-label="Profile">
+      <div class="ms-persona-coin" aria-hidden="true">CL</div>
+      <div style="flex:1">
+        <h1>Charles Llamas</h1>
+        <p class="ms-role">Technical Lead · Power Platform Senior Developer</p>
+        <div class="ms-persona-meta">
+          <span class="ms-meta-item"><i class="ti ti-map-pin" aria-hidden="true"></i> Mexico · Remote</span>
+          <span class="ms-meta-item"><i class="ti ti-briefcase" aria-hidden="true"></i> 14+ years experience</span>
+          <span class="ms-meta-item"><i class="ti ti-school" aria-hidden="true"></i> Ing. Sistemas
+            Computacionales</span>
+        </div>
+        <div class="ms-persona-actions">
+          <a class="ms-btn ms-btn-primary" href="https://www.linkedin.com/in/charlesllamas" target="_blank"
+            rel="noreferrer">
+            <i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+          <a class="ms-btn ms-btn-default" href="https://github.com/Charlesllamas" target="_blank" rel="noreferrer">
+            <i class="ti ti-brand-github" aria-hidden="true"></i> GitHub
+          </a>
+          <a class="ms-btn ms-btn-default" href="https://www.charlesllamas.pro" target="_blank" rel="noreferrer">
+            <i class="ti ti-world" aria-hidden="true"></i> Blog
+          </a>
+          <button class="ms-btn ms-btn-default" onclick="window.print()">
+            <i class="ti ti-printer" aria-hidden="true"></i> Print CV
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="ms-pivot-bar" aria-label="Sections">
+      <a class="ms-pivot-item active" href="#sec-about">Overview</a>
+      <a class="ms-pivot-item" href="#sec-experience">Experience</a>
+      <a class="ms-pivot-item" href="#sec-skills">Skills</a>
+      <a class="ms-pivot-item" href="#sec-certifications">Certifications</a>
+    </nav>
+
+    <div class="ms-main">
+
+      <!-- LEFT COLUMN -->
+      <div>
+
+        <span class="section-anchor" id="sec-about"></span>
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-user" aria-hidden="true"></i>
+            <h2>About</h2>
+          </div>
+          <div class="ms-card-body">
+            <p style="font-size:13px; color:#605E5C; line-height:1.85;">Power Platform Senior Developer with more than a
+              decade delivering Power Apps and model-driven solutions for enterprise teams. Deep experience across
+              configuration, customization, extensibility, integrations, data flows, and engineering practices spanning
+              C#, JavaScript, TypeScript, React, SSIS, SSRS, and PCF.</p>
+          </div>
+        </div>
+
+        <span class="section-anchor" id="sec-experience"></span>
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-layout-grid" aria-hidden="true"></i>
+            <h2>Capabilities</h2>
+          </div>
+          <div class="ms-card-body">
+            <div class="ms-cap">
+              <div class="ms-cap-header"><i class="ti ti-rocket" aria-hidden="true"></i><span
+                  class="ms-cap-title">Solution delivery</span></div>
+              <ul>
+                <li>Define functional and technical specifications</li>
+                <li>Design business processes and end-to-end solutions</li>
+                <li>Lead customization, configuration, and extensibility work</li>
+                <li>Integrate Power Platform solutions with external systems</li>
+              </ul>
+            </div>
+            <div class="ms-cap">
+              <div class="ms-cap-header"><i class="ti ti-code" aria-hidden="true"></i><span
+                  class="ms-cap-title">Platform engineering</span></div>
+              <ul>
+                <li>Plug-ins and custom workflow activities</li>
+                <li>JavaScript and PowerShell automation</li>
+                <li>Custom components with PCF</li>
+                <li>SSRS reporting and SSIS-based data flows</li>
+              </ul>
+            </div>
+            <div class="ms-cap">
+              <div class="ms-cap-header"><i class="ti ti-tools" aria-hidden="true"></i><span
+                  class="ms-cap-title">Tooling</span></div>
+              <ul>
+                <li>Microsoft Visual Studio and SQL Server Data Tools</li>
+                <li>Azure DevOps, Jira, and GitHub</li>
+                <li>Microsoft SQL Server and integration tooling</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-timeline" aria-hidden="true"></i>
+            <h2>Positions</h2>
+          </div>
+          <div class="ms-card-body">
+            <ol class="ms-timeline">
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2021 – Present</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Senior Developer</p>
+                  <p class="ms-tl-sub">Neoris · Remote</p>
+                </div>
+              </li>
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2019 – July 2021</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Senior Developer</p>
+                  <p class="ms-tl-sub">Cognizant · Guadalajara</p>
+                </div>
+              </li>
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2017 – July 2019</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Senior Developer</p>
+                  <p class="ms-tl-sub">Neoris · Monterrey</p>
+                </div>
+              </li>
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2016 – July 2017</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Developer</p>
+                  <p class="ms-tl-sub">Softtek · Guadalajara</p>
+                </div>
+              </li>
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2014 – July 2016</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Developer</p>
+                  <p class="ms-tl-sub">Ho1a Innovacion · Guadalajara</p>
+                </div>
+              </li>
+              <li class="ms-timeline-item">
+                <div class="ms-tl-dot-col">
+                  <div class="ms-tl-dot"></div>
+                  <div class="ms-tl-line"></div>
+                </div>
+                <div>
+                  <p class="ms-tl-period">July 2012 – July 2014</p>
+                  <p class="ms-tl-title">Microsoft Dynamics Developer</p>
+                  <p class="ms-tl-sub">Syndeo · Guadalajara</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-school" aria-hidden="true"></i>
+            <h2>Education</h2>
+          </div>
+          <div class="ms-card-body">
+            <table class="ms-detail-list">
+              <tr>
+                <td>Institution</td>
+                <td>Instituto Tecnológico Superior Zacatecas Sur</td>
+              </tr>
+              <tr>
+                <td>Degree</td>
+                <td>Ingeniería en Sistemas Computacionales</td>
+              </tr>
+              <tr>
+                <td>Period</td>
+                <td>2008 – 2012</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-mood-smile" aria-hidden="true"></i>
+            <h2>Outside work</h2>
+          </div>
+          <div class="ms-card-body">
+            <span class="ms-hobby"><i class="ti ti-device-gamepad-2" aria-hidden="true"></i> Video games</span>
+            <span class="ms-hobby"><i class="ti ti-code" aria-hidden="true"></i> Web development</span>
+            <span class="ms-hobby"><i class="ti ti-bike" aria-hidden="true"></i> Cycling</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+
+        <span class="section-anchor" id="sec-skills"></span>
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-sparkles" aria-hidden="true"></i>
+            <h2>Technical skills</h2>
+          </div>
+          <div class="ms-card-body">
+            <div class="ms-skill-section">
+              <p class="ms-skill-group-label">Core platform</p>
+              <div class="ms-tag-group">
+                <span class="ms-tag strong">Microsoft Dynamics CRM</span>
+                <span class="ms-tag strong">Power Apps</span>
+                <span class="ms-tag strong">Power Automate</span>
+              </div>
+            </div>
+            <div class="ms-skill-section">
+              <p class="ms-skill-group-label">Languages &amp; frameworks</p>
+              <div class="ms-tag-group">
+                <span class="ms-tag">C#</span>
+                <span class="ms-tag">JavaScript</span>
+                <span class="ms-tag">TypeScript</span>
+                <span class="ms-tag">React</span>
+                <span class="ms-tag">Vue.js</span>
+                <span class="ms-tag">HTML</span>
+                <span class="ms-tag">PCF</span>
+                <span class="ms-tag">PowerShell</span>
+                <span class="ms-tag">jQuery</span>
+                <span class="ms-tag">Bootstrap</span>
+                <span class="ms-tag">Laravel</span>
+                <span class="ms-tag">Vuetify</span>
+              </div>
+            </div>
+            <div class="ms-skill-section">
+              <p class="ms-skill-group-label">Data &amp; DevOps</p>
+              <div class="ms-tag-group">
+                <span class="ms-tag">T-SQL</span>
+                <span class="ms-tag">SSIS</span>
+                <span class="ms-tag">SSRS</span>
+                <span class="ms-tag">MySQL</span>
+                <span class="ms-tag">Azure DevOps</span>
+                <span class="ms-tag">GitHub</span>
+                <span class="ms-tag">PWA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <span class="section-anchor" id="sec-certifications"></span>
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-certificate" aria-hidden="true"></i>
+            <h2>Certifications</h2>
+          </div>
+          <div class="ms-card-body">
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">Power Platform Functional Consultant Associate</p>
+                <p class="ms-cert-date">Microsoft · Oct 2024</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MCPS: Microsoft Certified Professional</p>
+                <p class="ms-cert-date">Microsoft · Feb 2016</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MS: Extending Microsoft Dynamics CRM 2013</p>
+                <p class="ms-cert-date">Microsoft · Feb 2016</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MS: Dynamics Customization &amp; Configuration CRM 2013</p>
+                <p class="ms-cert-date">Microsoft · Jun 2015</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MCPS: Microsoft Certified Professional</p>
+                <p class="ms-cert-date">Microsoft · Jun 2013</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MCTS: SharePoint 2010 Configuration</p>
+                <p class="ms-cert-date">Microsoft · Jun 2013</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">MCTS: Dynamics CRM 2011 Applications</p>
+                <p class="ms-cert-date">Microsoft · Apr 2013</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">SCJP Sun Certified Java Programmer SE 6</p>
+                <p class="ms-cert-date">Sun Microsystems · May 2010</p>
+              </div>
+            </div>
+            <div class="ms-cert-row">
+              <div class="ms-cert-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+              <div>
+                <p class="ms-cert-name">SEI Certified PSP Developer</p>
+                <p class="ms-cert-date">SEI · May 2011</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ms-card">
+          <div class="ms-card-header">
+            <i class="ti ti-message" aria-hidden="true"></i>
+            <h2>Languages</h2>
+          </div>
+          <div class="ms-card-body">
+            <div class="ms-lang-row"><span class="ms-lang-name">Spanish</span><span class="ms-lang-badge">Native</span>
+            </div>
+            <div class="ms-lang-row"><span class="ms-lang-name">English</span><span
+                class="ms-lang-badge">Professional</span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="ms-footer">© 2026 Charles Llamas · <a href="https://www.charlesllamas.pro/about" target="_blank"
+        class="link-animated">charlesllamas.pro</a> </footer>
+
+  </div>
+
+  <script>
+    // Active pivot tab on scroll
+    const pivotItems = document.querySelectorAll('.ms-pivot-item');
+    const anchors = [
+      { id: 'sec-about', el: document.getElementById('sec-about') },
+      { id: 'sec-experience', el: document.getElementById('sec-experience') },
+      { id: 'sec-skills', el: document.getElementById('sec-skills') },
+      { id: 'sec-certifications', el: document.getElementById('sec-certifications') },
+    ];
+
+    function setActive(href) {
+      pivotItems.forEach(function (item) {
+        item.classList.toggle('active', item.getAttribute('href') === href);
+      });
+    }
+
+    window.addEventListener('scroll', function () {
+      var scrollY = window.scrollY + 80;
+      var current = '#sec-about';
+      anchors.forEach(function (a) {
+        if (a.el && a.el.getBoundingClientRect().top + window.scrollY <= scrollY) {
+          current = '#' + a.id;
+        }
+      });
+      setActive(current);
+    }, { passive: true });
+  </script>
+
 </body>
+
 </html>
